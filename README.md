@@ -1,13 +1,13 @@
 # Database Initialization
 
-Database will be initialized by `Liquibase` automatically. 
-Then the default data will be generated from `src/main/resources/db/script` along with the initialization.
+Database will be initialized by `Liquibase` automatically (or can be manually from `src/main/resources/db/script/init-schema.sql`). 
+Then the default data will be generated from `src/main/resources/db/script/default-currency.sql` along with the initialization.
 
 # Test
 
-Run ```./mvnw test```.
+Run ```./mvnw test```
 
-Test cases 1 - 6 is located at `src/test/java/com/example/coin`.
+Test cases 1 - 6 are located in `src/test/java/com/example/coin`
 
 # Lint
 
