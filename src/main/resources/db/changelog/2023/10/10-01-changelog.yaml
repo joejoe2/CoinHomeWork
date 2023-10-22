@@ -1,0 +1,55 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1697696251014-1
+      author: joejoe2 (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_currency_info
+                  name: id
+                  type: INT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: chinese_alias
+                  type: VARCHAR(255)
+            tableName: currency_info
+  - changeSet:
+      id: 1697696251014-2
+      author: joejoe2 (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_currency_info_code
+            tableName: currency_info
+  - changeSet:
+      id: 1697696251014-3
+      author: joejoe2 (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: code
+            indexName: idx_de603fc194510b238b4f55bad
+            tableName: currency_info
+  - changeSet:
+      id: 1697696251014-4
+      author: joejoe2 (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - sqlFile:
+            dbms: h2
+            path: db/script/default-currency.sql
